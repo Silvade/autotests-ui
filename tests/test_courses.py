@@ -12,8 +12,7 @@ def test_empty_courses_list(courses_list_page: CoursesListPage) -> None:
     )
     courses_list_page.navbar.check_visible("username")
     courses_list_page.sidebar.check_visible()
-    courses_list_page.check_visible_courses_title()
-    courses_list_page.check_visible_create_course_button()
+    courses_list_page.toolbar_view.check_visible()
     courses_list_page.check_visible_empty_view()
 
 
@@ -52,12 +51,11 @@ def test_create_course(
     )
     create_course_page.click_create_course_button()
 
-    courses_list_page.check_visible_courses_title()
-    courses_list_page.check_visible_create_course_button()
-    courses_list_page.check_visible_course_card(
+    courses_list_page.toolbar_view.check_visible()
+    courses_list_page.course_view.check_visible(
         title=title,
-        estimated_time=estimated_time,
-        max_score=max_score,
-        min_score=min_score,
+        estimated_time_text=estimated_time,
+        max_score_text=max_score,
+        min_score_text=min_score,
         index=0,
     )
