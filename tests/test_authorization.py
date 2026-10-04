@@ -20,6 +20,6 @@ def test_wrong_email_or_password_authorization(
         "https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/login"
     )
 
-    login_page.fill_login_form(email, password)
-    login_page.click_login_button()
-    login_page.check_visible_wrong_email_or_password_alert()
+    login_page.login_view.fill(email, password)
+    login_page.login_view.click_login_button()
+    login_page.login_view.check_visible(email, password)

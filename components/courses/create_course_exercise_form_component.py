@@ -10,9 +10,7 @@ class CreateCourseExerciseFormComponent(BaseComponent):
         )
         delete_button.click()
 
-    def check_visible(
-        self, index: int, title: str, description: str
-    ):
+    def check_visible(self, index: int, title: str, description: str):
         subtitle = self.page.get_by_test_id(
             f"create-course-exercise-{index}-box-toolbar-subtitle-text"
         )
