@@ -5,7 +5,7 @@ from elements.base_element import BaseElement
 
 class Input(BaseElement):
     def get_locator(self, **kwargs) -> Locator:
-        return super().get_locator(**kwargs).locator('input')
+        return super().get_locator(**kwargs).locator("input")
 
     def fill(self, value: str, **kwargs):
         locator = self.get_locator(**kwargs)
@@ -14,4 +14,3 @@ class Input(BaseElement):
     def check_have_value(self, value: str, **kwargs):
         locator = self.get_locator(**kwargs)
         expect(locator).to_have_value(value)
-
